@@ -1,0 +1,643 @@
+/* BODY */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(255, 223, 248);
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    background-color: #f20051;
+    background-size:contain;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 2rem;
+    margin: 0px;
+}
+
+.nav-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.nav-logo i, .nav-logo h1 {
+    transform: translate(30px, 0);
+}
+
+.nav-logo h1 {
+    font-size: 100%;
+    transform: translate(2rem, 0.3rem);
+}
+
+
+.nav-text {
+    display: none;
+    gap: 0.6rem;
+    cursor: pointer;
+}
+
+.nav-text a {
+    text-decoration: none;
+    margin-top: 1rem;
+    color: white;
+    font-weight: 600;
+}
+
+.menu-text:hover{
+    color: #fff2ab;
+    filter: drop-shadow(5px 5px 5px #f20051);
+}
+
+
+/* MAIN */
+main{
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: rgb(255, 223, 248);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    margin-bottom: 7rem;
+    gap: 2rem;
+}
+
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: #ff7be5;
+    border: 1px solid rgb(214, 214, 214);
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    margin: 0rem 0rem;
+    box-shadow: 2px 2px 10px rgba(101, 101, 101, 0.5);
+    
+}
+
+.imagen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card img {
+    width: 90%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    background-color: #ffb1cb;
+}
+
+button{
+    width: 100px;
+    background-color: #f20051;
+    color: white;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+/* Cards Específicas */
+
+/* 1: Kirby */
+.kirby-container:hover {
+    background-color: #ffb1cb;
+    color: rgb(0, 0, 119);
+}
+
+.kirby-card img:hover {
+    width: 100%;
+    height: auto;
+    transition: transform 2s ease;
+    animation: kirbyJump 3s infinite;
+  }
+  
+  @keyframes kirbyJump {
+    0% {
+      transform: translateY(0);
+      filter: hue-rotate(120deg);
+    }
+    25% {
+        transform: translateY(-10px);
+        filter: hue-rotate(340deg);
+      }
+    50% {
+      transform: translateY(0px);
+      filter: hue-rotate(0deg);
+    }
+    75% {
+        transform: translateY(-10px);
+        filter: hue-rotate(270deg);
+      }
+    100% {
+      transform: translateY(0px);
+      filter: hue-rotate(20deg);
+    }
+  }
+
+/* 2: MetaKnight */
+.meta-knight-container:hover {
+    background-color: #fffeb3;
+    color: #400050;
+}
+
+.meta-knight-card img:hover {
+    transition: transform 0.3s ease;
+    animation: metaFlash 0.8s infinite;
+}
+
+@keyframes metaFlash {
+    0%, 100% {
+        filter: brightness(1) saturate(100%) invert(90%) sepia(0%) saturate(100%);
+      }
+    50% {
+        filter: brightness(1) saturate(60%) invert(100%) sepia(40%) saturate(50%) drop-shadow(10px 10px 10px rgb(255, 255, 255));
+        transform: scale(1.1);
+    }
+}
+
+/* 3: DeDeDe */
+
+.dedede-container:hover {
+    background-color: white;
+    color: rgb(190, 0, 0);
+}
+
+.dedede img:hover {
+    transition: transform 0.3s ease;
+    animation: dedede-animacion 0.8s infinite;
+}
+
+@keyframes dedede-animacion {
+    0%, 100% {
+        filter: saturate(100%);
+      }
+    33% {
+        filter: sepia(10%) brightness(200%);
+        transform: scale(1.2) rotate(5deg);
+    }
+    66% {
+        transform: scale(1.2) rotate(-5deg);
+    }
+}
+
+/* 4: Waddle Dee */
+.waddle-dee-container:hover {
+    background-color: orange;
+}
+
+/* 5: Waddle Doo */
+
+.waddle-doo-container:hover {
+    background-color: aqua;
+    color: #000000;
+}
+
+.waddle-doo img:hover {
+    transition: transform 0.3s ease;
+    animation: doo-animacion 0.2s infinite;
+}
+
+@keyframes doo-animacion {
+    0%, 100% {
+        filter: saturate(100%);
+      }
+    25% {
+        filter: sepia(10%) saturate(100%) brightness(200%);
+    }
+    50% {
+        filter: sepia(10%) saturate(100%) contrast(100%) brightness(150%);
+    }
+    75% {
+        filter: saturate(50%) contrast(120%);
+    }
+}
+
+/* 6: Kracko */
+.kracko-container:hover {
+    background-color: #07003b;
+    color: white;
+}
+
+.kracko-container:hover .kracko img {
+    /* Aquí preferí hacer animación hover en la card para evitar errores */
+    animation: moveOut 1s infinite;
+}
+
+@keyframes moveOut {
+    0%, 100%{
+        transform: translate(0, 0);
+        filter: invert(0%) hue-rotate(330deg);
+    }
+    20% {
+        transform: translate(100%, -50%) scale(1.2);
+        filter: invert(0%) hue-rotate(350deg);
+    }
+    40% {
+        transform: translate(50%, -100%) scale(1.5);
+        filter: invert(0%);
+    }
+    50% {
+        transform: translate(0%, -120%) scale(3);
+        filter: invert(100%) brightness(300%) hue-rotate(200deg);
+    }
+    60% {
+        transform: translate(-50%, -100%) scale(2);
+        filter: invert(0%);
+    }
+    80% {
+        transform: translate(-100%, -50%) scale(1.2);
+        filter: invert(0%) hue-rotate(350deg);
+    }
+}
+
+/* 7: Dark Meta Knight */
+
+.dark-meta-container:hover {
+    background-color: rgb(84, 0, 0);
+    color: #ffffff;
+}
+
+.dark-meta img:hover {
+    animation: darkmetaFlash 0.8s infinite;
+}
+
+@keyframes darkmetaFlash {
+    0%, 100% {
+        filter: brightness(2) saturate(10%) invert(90%);
+        transform: rotate(0deg);
+      }
+    10% {
+        filter: brightness(3) invert(100%) saturate(50%) drop-shadow(10px 20px 10px rgb(0, 0, 0));
+        transform: scale(1.05) rotate(36deg);
+    }
+    20% {
+        filter: brightness(3) invert(100%) saturate(50%) drop-shadow(10px 20px 10px rgb(140, 0, 0));
+        transform: scale(1.1) rotate(72deg);
+    }
+    30% {
+        filter: brightness(3) invert(100%) saturate(50%) drop-shadow(10px 20px 10px rgb(0, 0, 0));
+        transform: scale(1.15) rotate(108deg);
+    }
+    40% {
+        filter: brightness(3) invert(100%) saturate(50%) drop-shadow(10px 20px 10px rgb(140, 0, 0));
+        transform: scale(1.2) rotate(144deg);
+    }
+    50% {
+        filter: brightness(3) invert(100%) saturate(50%) drop-shadow(10px 20px 10px rgb(0, 0, 0));
+        transform: scale(1.25) rotate(180deg);
+    }
+    60% {
+        filter: brightness(3) invert(100%) saturate(50%) drop-shadow(10px 20px 10px rgb(140, 0, 0));
+        transform: scale(1.2) rotate(216deg);
+    }
+    70% {
+        transform: scale(1.15) rotate(252deg);
+    }
+    80% {
+        filter: brightness(3) invert(100%) saturate(50%) drop-shadow(10px 20px 10px rgb(0, 0, 0));
+        transform: scale(1.1) rotate(288deg);  
+    }
+    90% {
+        filter: brightness(3) invert(100%) saturate(50%) drop-shadow(10px 20px 10px rgb(140, 0, 0));
+        transform: scale(1.05) rotate(324deg); 
+    }
+}
+
+
+/* 8: Shadow Kirby */
+.shadow-kirby-container:hover {
+    background-color: black;
+    color: white;
+}
+
+.shadow-kirby:hover {
+    filter: blur(1) contrast(100%) brightness(200%);
+    transform: scale(0.9);
+    animation: sk 5s infinite;
+}
+
+@keyframes sk {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.1) rotate(359deg);
+        opacity: 50%;
+    }
+}
+
+  
+/* SECTION: PÁGINAS */
+.numeros {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 ;
+    padding: 1.5rem 0;
+    position:fixed;
+    bottom: 80px;
+    z-index: 1;
+    gap: 0.5rem;
+    background-image: url(../img/background.png);
+    background-size: contain;
+    background-repeat: none;
+    width: 100%;
+}
+
+.numeros button {
+    background-color: transparent;
+    border: none;
+    position: relative;
+    color: #000000;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.numeros button::before {
+    content: '\f005'; /* Código Unicode de la estrella en Font Awesome */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: #ffd700;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+    font-size: 2.5rem;
+    z-index: -1;
+}
+
+.numeros button:hover::before {
+    color: #fffeb3; /* Color amarillo más claro para hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.numeros button:first-child::before, .numeros button:last-child::before {
+    font-size: 2rem;
+    transform: translate(-50%, -48%);
+}
+
+.numeros button:first-child, .numeros button:last-child {
+    font-size: 1.5rem;
+}
+
+/* FOOTER */
+footer {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-color:#f20051;
+    align-content: center;
+    text-align: center;
+    margin: 0;
+    padding: 1rem 0 1rem 0;
+    position: sticky;
+    bottom: 0;
+    z-index: 1;
+}
+
+footer p, footer i {
+    margin: 0.2rem;
+    padding: 0;
+}
+
+.rrss {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 150%;
+}
+
+.rrss i {
+    cursor: pointer;
+    color: white;
+}
+
+.fa-facebook {
+    font-size: 92%
+}
+
+
+/* GRID AREAS */
+nav{
+    grid-area: nav;
+}
+
+main{
+    grid-area: main;
+}
+
+.numeros{
+    grid-area: numeros;
+}
+
+footer{
+    grid-area: footer;
+}
+
+
+/* MEDIA QUERYS */
+
+/* [576px, ...[ */
+@media (min-width:576px){
+    .contenedor{
+        display: grid;
+        grid-template-columns: 20% 80%;
+        grid-template-areas:
+            "nav nav"
+            "main main"
+            "numeros numeros"
+            "footer footer";
+    }
+
+    /* NAVBAR */
+    .barritas{
+        display: none;
+    }
+
+    .navbar {
+        background-color: #f20051;
+        position: sticky;
+        z-index: 999;
+    }
+
+    .nav-text{
+        display: flex;
+        padding-top: 1rem;
+    }
+    
+    .nav-logo h1 {
+        transform: translate(2rem, 0.3rem); 
+    }
+
+    .nav-text a {
+        transform: translate(0,-0.7rem);
+    }
+
+    /* MAIN */
+
+    main{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin-top: 2rem;
+        margin-bottom: 8rem;
+    }
+    
+    .card {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid rgb(214, 214, 214);
+        justify-content: center;
+        align-items: center;
+        margin: 0rem 0rem;
+    }
+
+    .card:hover p {
+        padding: 2%;
+    }
+
+    /* SECCIÓN: PÁGINAS */
+    .numeros {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 ;
+        padding: 1.5rem 0;
+        position:fixed;
+        bottom: 80px;
+        z-index: 1;
+        gap: 0.5rem;
+        background-image: url(../img/background.png);
+        background-size: cover;
+        background-repeat: none;
+        width: 100%;
+    }
+}
+
+/* [1150px, ∞[*/
+/* Cambié 992 a 150 debido a que en el intervalo [992-1150] se veía ya demasiado angosto con 4 cards por fila */
+@media (min-width:1150px) { 
+
+    .contenedor{
+        display: grid;
+        height: 100vh;
+        max-height: max-content;
+        grid-template-columns: 15% 85%;
+        grid-template-rows: auto; /* Añadir esta línea */
+        grid-template-areas:
+        "nav main"
+        "nav main"
+        "nav main"
+        "nav main"
+        "footer numeros";
+    }
+
+    /* NAVBAR */
+    .navbar{
+        padding-right: 0;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+        background-color: #ff7be5;
+        position: sticky;
+        z-index: 999;
+    }
+
+    .nav-logo i, .nav-logo h1 {
+        transform: none;
+        transform: translate(0, 2rem);
+    }
+
+    .nav-logo {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    .nav-logo h1 {
+        transform: translate(0, 2.2rem); 
+    }
+
+    .nav-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        transform: translate(0, 4rem);
+    }
+
+    /* MAIN */
+    main{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        overflow-y: scroll;
+        margin-top: 0rem;
+        margin-bottom: 0rem;
+    }
+
+    .card:hover p {
+        padding: 2%;
+    }
+
+    img{
+        height: 80%;
+        width: 90%;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .card {
+        display: flex;
+        border: 1px solid rgb(214, 214, 214);
+        justify-content: center;
+        align-items: center;
+        margin: 0 0 0 20px;
+        padding-bottom: 2rem;
+    }
+
+    .card img {
+        width: 90%;
+        height: auto;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* SECCIÓN: PÁGINAS */
+
+    .numeros{
+        bottom: 0px;
+        position: sticky;
+    }
+
+    /* FOOTER */
+    footer {
+        display: flex;
+        height: 100hv;
+        flex-direction: column;
+        color: white;
+        justify-content: center;
+        padding: 0;
+    }
+
+    footer i {
+        margin-bottom: 1rem;
+    }
+}

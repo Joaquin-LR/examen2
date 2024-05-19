@@ -1,0 +1,358 @@
+/* BODY */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    background-color: #f20051;
+    background-size:contain;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 2rem;
+    margin: 0px;
+}
+
+.nav-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.nav-logo i, .nav-logo h1 {
+    transform: translate(30px, 0);
+}
+
+.nav-logo h1 {
+    font-size: 100%;
+}
+
+.nav-text {
+    display: none;
+    gap: 0.6rem;
+    cursor: pointer;
+}
+
+.nav-text a {
+    text-decoration: none;
+    margin-top: 1rem;
+    color: white;
+    font-weight: 600;
+}
+
+.menu-text:hover{
+    color: #fff2ab;
+    filter: drop-shadow(5px 5px 5px #f20051);
+}
+
+/* MAIN */
+main {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    padding: 7rem;
+    background-color: rgb(255, 223, 248);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #f20051;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #ffffff;
+    color: #f20051;
+    filter: drop-shadow(10px 10px 10px #f20051);
+  }
+  
+/* SECTION: PÁGINAS */
+.numeros {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 ;
+    padding: 1.5rem 0;
+    position:fixed;
+    bottom: 80px;
+    z-index: 1;
+    gap: 0.5rem;
+    background-image: url(../img/background.png);
+    background-size: contain;
+    background-repeat: none;
+    width: 100%;
+}
+
+.numeros button {
+    background-color: transparent;
+    border: none;
+    position: relative;
+    color: #000000;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.numeros button::before {
+    content: '\f005'; /* Código Unicode de la estrella en Font Awesome */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: #ffd700;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+    font-size: 2.5rem;
+    z-index: -1;
+}
+
+.numeros button:hover::before {
+    color: #fffeb3; /* Color amarillo más claro para hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.numeros button:first-child::before, .numeros button:last-child::before {
+    font-size: 2rem;
+    transform: translate(-50%, -48%);
+}
+
+.numeros button:first-child, .numeros button:last-child {
+    font-size: 1.5rem;
+}
+
+/* FOOTER */
+footer {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-color:#f20051;
+    align-content: center;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    padding: 1rem 0 1rem 0;
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+}
+
+footer p, footer i {
+    margin: 0.2rem;
+    padding: 0;
+}
+
+.rrss {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 150%;
+}
+
+.rrss i {
+    cursor: pointer;
+    color: white;
+}
+
+.fa-facebook {
+    font-size: 92%
+}
+
+
+/* GRID AREAS */
+nav{
+    grid-area: nav;
+}
+
+main{
+    grid-area: main;
+}
+
+.numeros{
+    grid-area: numeros;
+}
+
+footer{
+    grid-area: footer;
+}
+
+
+/* MEDIA QUERYS */
+
+/* [576px, ...[ */
+@media (min-width:576px){
+    .contenedor{
+        display: grid;
+        grid-template-columns: 20% 80%;
+        grid-template-areas:
+            "nav nav"
+            "main main"
+            "numeros numeros"
+            "footer footer";
+    }
+
+
+    .barritas{
+        display: none;
+    }
+
+    .navbar {
+        background-color: #f20051;
+    }
+
+    .nav-text{
+        display: flex;
+        padding-top: 1rem;
+    }
+    
+    .nav-text p{
+        margin: 0px;
+        padding: 0.4rem;
+    }
+
+    .nav-text a {
+        transform: translate(0,-0.7rem);
+    }
+
+
+    .numeros {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 ;
+        position:fixed;
+        bottom: 69px;
+        z-index: 1;
+        gap: 0.5rem;
+        background-image: url(../img/background.png);
+        background-size: cover;
+        background-repeat: none;
+        width: 100%;
+    }
+
+    footer {
+        display: flex;
+        position: fixed;
+        width: 100%;
+        flex-direction: column;
+        color: white;
+        justify-content: center;
+        padding: 0;
+        bottom: 0;
+    }
+
+    footer i {
+        margin-bottom: 1rem;
+    }
+}
+
+/* [992px, ∞[*/
+@media (min-width:992px) {
+
+    .contenedor{
+        display: grid;
+        height: 100vh;
+        max-height: max-content;
+        grid-template-columns: 15% 85%;
+        grid-template-rows: auto; /* Añadir esta línea */
+        grid-template-areas:
+        "nav main"
+        "nav main"
+        "nav main"
+        "nav main"
+        "footer numeros";
+    }
+
+
+    /* NAVBAR */
+    .navbar{
+        padding-right: 0;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+        background-color: #ff7be5;
+    }
+
+    .nav-logo i, .nav-logo h1 {
+        transform: none;
+        transform: translate(0, 2rem);
+    }
+
+    .nav-logo h1 {
+        transform: translate(0, 2.2rem); 
+    }
+
+    .nav-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        transform: translate(0, 4rem);
+    }
+
+
+    /* SECCIÓN: PÁGINAS */
+
+    .numeros{
+        bottom: 0px;
+        position: sticky;
+    }
+
+    /* FOOTER */
+    footer {
+        display: flex;
+        height: 100hv;
+        flex-direction: column;
+        color: white;
+        justify-content: center;
+        position: sticky;
+        padding: 0;
+    }
+
+    footer i {
+        margin-bottom: 1rem;
+    }
+}
